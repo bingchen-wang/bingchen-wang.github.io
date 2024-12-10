@@ -25,55 +25,31 @@
 
 		<!-- Banner -->
 			<section id="banner"></ul>
-				<h2>Bingchen Wang</h2>
+				<h2>Publications</h2>
 			</section>
 		<!-- One -->
-		 	<section id="one" class="wrapper style1"><div class="container 75%">
-						<div class="row 200%">
-							<div class="6u 12u$(medium)">
-								<img src="images/IMG_8587.JPG" alt="Profile picture" style="max-width: 100%; height: auto;">
-								<p> </p>
-									<ul class="icons" style = "text-align: center"><li><a href="https://github.com/bingchen-wang" class="icon fa-github"></a></li>
-										<li><a href="https://www.linkedin.com/in/bingchenwillwang" class="icon fa-linkedin"></a></li>
-										<li><a href="https://sites.google.com/view/bingchenwang" class="icon fa-google"></a></li>
-										<li><a href="mailto:bw2506@columbia.edu" class="icon fa-envelope"></a></li>
-										<li><a href="https://twitter.com/BingchenWang1" class="icon fa-twitter"></a></li>
-									</ul>
-									<ul class="actions" style = "text-align: center"><li><a href="files/Bingchen Wang_CV.pdf" class="button special">Download CV</a></li>
-									</ul>
+		 	<section id="one" class="wrapper style1"><div class="container 100%">
+						<div class="row 150%">
+							<div class="4u 12u$(medium)">
+								<img src="images/Paid with models illustration.png" alt="Profile picture" style="max-width: 100%; height: auto;">
 								</div>
-							<div class="6u$ 12u$(medium)">
-								<header><h2>ABOUT ME</h2></header>
-								<p>I am currently a research assistant at the National University of Singapore (NUS), affiliated with <a href = "https://www.comp.nus.edu.sg/~lowkh/index.html" target="_blank">GLOW.AI</a> and privileged to be supervised by <a href = "https://www.comp.nus.edu.sg/cs/people/lowkh/"  target="_blank">Prof Bryan Kian Hsiang Low</a>. Previously, I completed a MPhil in Economics from Oxford, where I was extremely fortunate to work with <a href="https://www.nuffield.ox.ac.uk/people/profiles/david-hendry/">Prof David Hendry</a> and <a href="https://users.ox.ac.uk/~nuff0231/">Prof Jennifer Castle</a>. Prior to Oxford, I earned a B.A. in mathematics-statistics from Columbia University and a B.Sc. (Hons) in computing mathematics from CityU Hong Kong.</p>
-								<p>My current research interests lie at the intersection of artificial intelligence (AI) and the social sciences, encompassing topics such as:<ul>
-										<li><b>mechanism design</b>;</li>
-										<li><b>LLM bias & mitigation</b>;</li>
-										<li><b>AI for social sciences</b>.</li>
-									</ul></p>
-								<p>Beyond research, I am deeply enamoured with art and cultures, often drawing inspirations in the hidden corners of cities. This passion, dovetailed with my academic interests, culminates in a long-standing hobby of reflecting on societal dynamics, which occasionally inspires me to pen opinion pieces on pressing issues for local newspapers.</p>
+							<div class="8u$ 12u$(medium)">
+								<header style = "font-size: larger;"><b>Paid with Models: Optimal Contract Design for Collaborative Machine Learning</b></header>
+								<p><b>Bingchen Wang*</b>, Zhaoxuan Wu, Fusheng Liu, and Bryan Kian Hsiang Low <br>
+								<em>The 39th AAAI Conference on Artificial Intelligence </em>, <b>AAAI-25</b>, Philadelphia, PA, USA, 2025, forthcoming.<br>
+								<span style="color: #980000;">[23.4% Acceptance Rate]</span> <br>
+								
+							                <!-- Toggle button -->
+											<button onclick="toggleAbstract()" style="margin-top: 10px; background-color: #980000; color: white; border: none; border-radius: 5px; cursor: pointer;">Abstract</button>
+
+											<!-- Abstract content -->
+											<div id="abstract-content" style="display: none; margin-top: 10px; padding: 10px; background-color: #f9f9f9; border-left: 4px solid #999999;">
+												Collaborative machine learning (CML) provides a promising paradigm for democratizing advanced technologies by enabling cost-sharing among participants. However, the potential for rent-seeking behaviors among parties can undermine such collaborations. Contract theory presents a viable solution by rewarding participants with models of varying accuracy based on their contributions. However, unlike monetary compensation, using models as rewards introduces unique challenges, particularly due to the stochastic nature of these rewards when contribution costs are privately held information. This paper formalizes the optimal contracting problem within CML and proposes a transformation that simplifies the non-convex optimization problem into one that can be solved through convex optimization algorithms. We conduct a detailed analysis of the properties that an optimal contract must satisfy when models serve as the rewards, and we explore the potential benefits and welfare implications of these contract-driven CML schemes through numerical experiments.
+											</div>
+											</p>
 							</div>
 						</div>
 					</div>
-				</section>
-		<!-- Two -->
-		 	<section id="two" class="wrapper style2 special"><div class="container">
-						<header class="major"><h2>My Research</h2>
-							<p>AI × social sciences</p>
-						</header><div class="row 150%">
-							
-							<div class="6u 12u$(xsmall)">
-								<div class="image fit captioned">
-									<img src="images/display 1.png" alt="" width="575" height="390"><h3>Detecting Parameter Shifts with Multiplicative-Indicator Saturation</h3>
-								</div>
-							</div>
-							<div class="6u$ 12u$(xsmall)">
-								<div class="image fit captioned">
-									<img src="images/display 2.png" alt="" width="573" height="390"><h3>Paid with Models: Optimal Contract Design for Collaborative Machine Learning</h3>
-								</div>
-							</div>
-						</div>
-						<!--<ul class="actions"><li><a href="#" class="button special big">Details</a></li>-->
-						</ul></div>
 				</section>
 		<!-- Three -- <section id="three" class="wrapper style1"><div class="container">
 						<header class="major special"><h2>NEWS</h2>
@@ -140,4 +116,30 @@
 			</div> 
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script><script src="assets/js/skel.min.js"></script><script src="assets/js/util.js"></script><script src="assets/js/main.js"></script></body></html>
+			<script src="assets/js/jquery.min.js">
+
+			</script>
+			<script src="assets/js/skel.min.js">
+
+			</script><script src="assets/js/util.js">
+
+			</script><script src="assets/js/main.js">
+
+			</script>
+
+			<script>
+				function toggleAbstract() {
+					const abstract = document.getElementById("abstract-content");
+					const button = event.target;
+					if (abstract.style.display === "none") {
+						abstract.style.display = "block";
+						button.textContent = "Hide Abstract";
+					} else {
+						abstract.style.display = "none";
+						button.textContent = "Abstract";
+					}
+				}
+			</script>
+			
+		
+		</body></html>
