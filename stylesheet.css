@@ -1,3 +1,33 @@
+.topnav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffffee; /* translucent white */
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  padding: 0.6em 0;
+  z-index: 1000;
+}
+
+.topnav a {
+  color: #333;
+  font-size: 0.95rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.topnav a:hover {
+  color: #0056b8;
+  text-decoration: underline;
+}
+
+body {
+  padding-top: 60px; /* ensures content doesn’t hide under nav */
+}
 /* latin-ext */
 @font-face {
   font-family: 'Lato';
@@ -139,4 +169,23 @@ span.highlight {
     padding: 20px;
     display: inline-block;
     border-radius: 10px;
+}
+
+.one img {
+  width: 240px;        /* slightly wider, to fit the aspect ratio */
+  height: 160px;       /* keeps it rectangular */
+  object-fit: cover;   /* crops gently if necessary */
+  border-radius: 4px;  /* optional rounded corners */
+}
+
+.paper-entry {
+  background-color: #fafafa;   /* very light grey */
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.paper-entry:hover {
+  background-color: #f2f2f2;   /* slightly darker on hover */
 }
