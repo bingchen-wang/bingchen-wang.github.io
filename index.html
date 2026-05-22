@@ -90,7 +90,7 @@
 					<ul>
 						<li>preference alignment without sensitive demographic data nor finetuning (P2P);</li>
 						<li style="margin-top: 10px;">incentive design that enables small players to collaborate on model training none could afford alone (Paid with Models);</li>
-						<li style="margin-top: 10px;">synthetic agent feedback for resource-constrained product iteration (SIM-PANEL, in development);</li>
+						<li style="margin-top: 10px;">synthetic agent feedback for resource-constrained product iteration (SIM-PANEL);</li>
 						<li style="margin-top: 10px;">synthetic auditing of algorithmic bias without access to proprietary data (ResumeBench, in development).</li>					
 					</ul>
 				</p>
@@ -225,17 +225,26 @@
 
 			<td style="padding:16px;width:50%;vertical-align:top;text-align:center;">
 			<div style="width:260px;height:260px;margin:0 auto 14px auto;display:flex;align-items:center;justify-content:center;">
-			<img src="images/software_logos/simpanel_logo.svg" alt="SIM-PANEL logo" style="max-width:100%;max-height:100%;object-fit:contain;display:block;">
+				<img src="images/software_logos/simpanel_logo.svg" alt="SIM-PANEL logo" style="max-width:100%;max-height:100%;object-fit:contain;display:block;">
 			</div>
 			<div style="text-align:left;">
 				<span class="papertitle">SIM-PANEL</span><br>
-				<em>In active development</em>
+				<em>Public research software</em> (
+				<a href="https://bingchen-wang.github.io/sim-panel/">site</a> /
+				<a href="https://bingchen-wang.github.io/sim-panel/">docs</a> /
+				<a href="https://github.com/bingchen-wang/sim-panel">code</a> /
+				<a href="https://github.com/bingchen-wang/sim-panel/releases">release</a>
+				)
+
 				<p style="margin-top:8px;">
-				SIM-PANEL generates synthetic panel datasets where LLM agents evaluate products under controlled experimental designs—random assignment, manual mapping, or self-selection. 
-				Designed for reproducible benchmarking, pipeline development, and simulation design in agent-based research.  CLI-driven, YAML-configured, CPU-friendly.
+				SIM-PANEL is a reproducible toolkit for synthetic panel-style datasets and
+				agent-product evaluation workflows. It provides YAML-configured generation,
+				schema-validated JSONL artifacts, random/manual/self-selection policies,
+				real-data ingestion, benchmark subset construction, and comparison diagnostics
+				for simulation and evaluation pipelines.
 				</p>
 				<p style="margin-top:8px;color:#555;">
-				Status: Internal research prototype.
+				Status: Public v0.1.0 pre-release. Documentation and code are available online.
 				</p>
 			</div>
 			</td>
