@@ -125,6 +125,12 @@ strong {
   font-size: 14px;
 }
 
+.muted {
+  color: #555;
+}
+
+.accent { color: #e8590c; }
+
 h2 {
   margin: 0;
   font-weight: normal;
@@ -596,9 +602,9 @@ span.highlight {
   .about-photo img,
   .about-photo .hoverZoomLink {
     display: block;
-    width: 200px !important;
-    max-width: 42vw !important;
-    height: 200px !important;
+    width: min(200px, 42vw) !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     object-position: center;
     border-radius: 50%;
@@ -653,3 +659,98 @@ span.highlight {
 }
 /* ===== /Mobile layout fixes ===== */
 
+/* ===== Dark mode (system preference) ===== */
+:root { color-scheme: light dark; }   /* native scrollbars/forms follow the theme */
+
+@media (prefers-color-scheme: dark) {
+
+  html, body { background: #111; color: #e6e6e6; }
+
+  body, td, th, tr, p, strong, h2, .name, .papertitle { color: #e6e6e6; }
+
+  a { color: #8ab4f8; }
+  a:focus, a:hover { color: #f6b26b; }
+
+  .muted { color: #a6a6a6; }
+
+  /* (Oral Presentation): pure red glares on dark */
+  .accent { color: #ff922b; }
+
+  /* --- Figures: white plate so line diagrams stay legible --- */
+  .one img {
+    background: #fff;
+    padding: 6px;
+    box-sizing: border-box;
+    filter: brightness(0.92);
+  }
+
+  /* --- Top navigation --- */
+  .topnav { background-color: rgba(17, 17, 17, 0.92); border-bottom-color: #333; }
+  .topnav a { color: #e0e0e0; }
+  .topnav a:hover, .topnav a:focus { color: #f6b26b; text-decoration: none; }
+
+  /* --- Paper cards --- */
+  .paper-entry { background-color: #181818; }
+  .paper-entry:hover { background-color: #202020; }
+
+  /* --- Muted text --- */
+  .rmap-sub, .rmap-q, .rmap-note, .rmap-project-desc, .rmap-status,
+  .rmap-bridge, .rmap-loop-caption, .rmap-venue,
+  .essay-date, .essay-home a, .essay-figure figcaption {
+    color: #a6a6a6;
+  }
+  .rmap-bridge-stage { color: #d8d8d8; }
+
+  /* --- Research map --- */
+  .rmap-stage {
+    background: #181818;
+    border-color: #333;
+    border-top-color: #444;
+    color: #e6e6e6;
+  }
+  .rmap-head { border-bottom-color: rgba(255, 255, 255, 0.10); }
+  .rmap-num { background: #666; color: #fff; }
+  .rmap-connector { background: #444; }
+  .rmap-connector::after { border-left-color: #555; }
+
+  .rmap-node-dot { background: #111; border-color: #3bc9db; color: #3bc9db; }
+  .rmap-node-label { color: #a6a6a6; }
+  .rmap-node.is-active .rmap-node-dot { background: #0b7285; color: #fff; }
+  .rmap-node.is-active .rmap-node-label { color: #66d9e8; }
+
+  .rmap-stage[data-stage="1"].is-active { border-top-color: #ff922b; background: #201812; }
+  .rmap-stage[data-stage="2"].is-active { border-top-color: #69db7c; background: #142018; }
+  .rmap-stage[data-stage="3"].is-active { border-top-color: #74c0fc; background: #121c24; }
+
+  .rmap-panel { border-left-color: #333; }   /* no-JS default */
+  #rmap-panel-1  { border-left-color: #ff922b; }
+  #rmap-panel-2  { border-left-color: #69db7c; }
+  #rmap-panel-25 { border-left-color: #3bc9db; }
+  #rmap-panel-3  { border-left-color: #74c0fc; }
+
+  .rmap-loop {
+    border-left-color: #444;
+    border-right-color: #444;
+    border-bottom-color: #444;
+  }
+  .rmap-loop::before { border-bottom-color: #444; }
+
+  /* --- Essays --- */
+  .essay-body, .essay { background: #111; color: #e6e6e6; }
+  .essay p { color: #e6e6e6; }
+  .essay a { color: #8ab4f8; }
+  .essay a:hover, .essay a:focus { color: #f6b26b; }
+
+  /* --- Misc template elements --- */
+  span.highlight { background-color: #3a3514; }
+  .colored-box { background: #181818; color: #e6e6e6; }
+}
+
+/* Mobile + dark: connector arrowheads point down */
+@media (prefers-color-scheme: dark) and (max-width: 600px) {
+  .rmap-connector::after {
+    border-left-color: transparent;
+    border-top-color: #555;
+  }
+}
+/* ===== /Dark mode ===== */
