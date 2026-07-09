@@ -7,6 +7,7 @@
 	<title>Bingchen Wang</title>
 
 	<meta name="author" content="Bingchen Wang">
+	<meta name="description" content="Independent researcher studying how human, artificial, and hybrid intelligent systems learn, coordinate, and make decisions under incentive, informational, and institutional constraints.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png?v=2">
@@ -14,7 +15,6 @@
 	<link rel="shortcut icon" type="image/x-icon" href="images/favicon/favicon.ico?v=2">
 	<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png?v=2">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    
   </head>
 
   <body>
@@ -22,16 +22,17 @@
 	<nav class="topnav">
 	<a href="#about">About</a>
 	<a href="#research">Research</a>
-	<a href="#works">Selected Works</a>
+	<a href="#works">Works</a>
 	<a href="#software">Software</a>
-	<a href="#talks">Presentations</a>
-	<a href="#awards">Selected Awards</a>
-	<a href="#beyond">Beyond Research</a>
+	<a href="#writing">Writing</a>
+	<a href="#beyond">Beyond</a>
 	</nav>
 
     <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
       <tr style="padding:0px">
         <td style="padding:0px">
+
+          <!-- ===== About ===== -->
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr style="padding:0px">
               <td style="padding:2.5%;width:63%;vertical-align:middle">
@@ -40,13 +41,29 @@
                 </p>
 				<h2 id="about"></h2>
                 <p>
-				I am an independent researcher working at the intersection of artificial intelligence and economics. 
-				My work focuses on incentive design for collaborative and decentralized machine learning; preference alignment through preference reconstruction; and bias and mitigation in AI-mediated decision systems, especially in labour market contexts.
-                </p>
+				I am an independent researcher studying how human, artificial, and hybrid intelligent
+				systems coordinate, represent, and decide under incentive, informational, and
+				institutional constraints—across the lifecycle of AI systems, from development
+				to alignment to deployment.
+				</p>
 				<p>
-				Previously, I worked as a research assistant at the National University of Singapore, focusing on mechanism design and AI for collaborative learning systems, and earlier at the University of Hong Kong on political economy projects. 
-				I hold an MPhil in Economics from the University of Oxford, where I was fortunate to work under the guidance of <a href="https://www.nuffield.ox.ac.uk/people/profiles/david-hendry/">Prof. David Hendry</a> and <a href ="https://users.ox.ac.uk/~nuff0231/">Prof. Jennifer Castle</a> and to contribute research within <a href="https://www.climateeconometrics.org">Climate Econometrics</a>, which played an important role in shaping my research ethos and intellectual curiosity.
-				Before that, I earned a B.A. in Mathematics–Statistics from Columbia University and a B.Sc. (Hons) in Computing Mathematics from CityU Hong Kong.
+				My work combines machine learning, economics, statistical inference, and empirical
+				social science: contract theory for collaborative machine learning
+				(<em>Paid with Models</em>, AAAI-25 oral), population-level preference reconstruction
+				with compact LLM ensembles (<em>Prompts to Proxies</em>, under review),
+				synthetic-panel evaluation tooling (SIM-PANEL, open source), and mechanism-based
+				research on AI-mediated hiring (ResumeBench, ongoing).
+				</p>
+				<p>
+				Previously, I was a research assistant at the National University of Singapore,
+				working on mechanism design and collaborative learning systems, and earlier at the
+				University of Hong Kong on political economy projects. I hold an MPhil in Economics
+				(Distinction) from the University of Oxford, where I worked under
+				<a href="https://www.nuffield.ox.ac.uk/people/profiles/david-hendry/">Prof. David Hendry</a> and
+				<a href="https://users.ox.ac.uk/~nuff0231/">Prof. Jennifer Castle</a> and contributed to
+				<a href="https://www.climateeconometrics.org">Climate Econometrics</a>, a B.A. in
+				Mathematics–Statistics from Columbia University, and a B.Sc. (Hons) in Computing
+				Mathematics from CityU Hong Kong.
 				</p>
                 <p style="text-align:center">
                   <a href="mailto:bw2506@columbia.edu">Email</a> &nbsp;/&nbsp;
@@ -63,35 +80,144 @@
             </tr>
           </tbody></table>
 
+		  <!-- ===== Research Map: Intelligence under I³ Constraints ===== -->
+<div class="rmap" id="rmap">
+  <h2 class="rmap-title" id = "research">Intelligence under I<sup>3</sup> constraints</h2>
+  <p class="rmap-sub">Incentive · Informational · Institutional</p>
 
+  <div class="rmap-track" role="tablist" aria-label="Research stages">
 
+    <button class="rmap-stage is-active" data-stage="1" role="tab"
+            aria-selected="true" aria-controls="rmap-panel-1" id="rmap-tab-1">
+      <span class="rmap-head"><span class="rmap-num">1</span>
+      <span class="rmap-name">Development</span></span>
+      <span class="rmap-q">Who gets to develop AI, and on what terms?</span>
+    </button>
+
+    <span class="rmap-connector" aria-hidden="true"></span>
+
+    <button class="rmap-stage" data-stage="2" role="tab"
+            aria-selected="false" aria-controls="rmap-panel-2" id="rmap-tab-2">
+      <span class="rmap-head"><span class="rmap-num">2</span>
+      <span class="rmap-name">Alignment</span></span>
+      <span class="rmap-q">Whose preferences does AI represent, and how can it represent them efficiently?</span>
+    </button>
+
+    <span class="rmap-connector plain" aria-hidden="true"></span>
+
+    <button class="rmap-node" data-stage="25" role="tab"
+            aria-selected="false" aria-controls="rmap-panel-25" id="rmap-tab-25">
+      <span class="rmap-node-dot" aria-hidden="true">+</span>
+      <span class="rmap-node-label">Pre-deployment evaluation</span>
+    </button>
+
+    <span class="rmap-connector" aria-hidden="true"></span>
+
+    <button class="rmap-stage" data-stage="3" role="tab"
+            aria-selected="false" aria-controls="rmap-panel-3" id="rmap-tab-3">
+      <span class="rmap-head"><span class="rmap-num">3</span>
+      <span class="rmap-name">Deployment</span></span>
+      <span class="rmap-q">Once deployed, how does AI reshape opportunity, incentives and institutional decision-making?</span>
+    </button>
+
+  </div>
+
+  <div class="rmap-loop" aria-hidden="true"></div>
+  <p class="rmap-loop-caption">What deployment reveals feeds back into development.</p>
+
+  <div class="rmap-panels">
+
+    <div class="rmap-panel is-active" id="rmap-panel-1" role="tabpanel" aria-labelledby="rmap-tab-1">
+      <p class="rmap-bridge"><span class="rmap-bridge-stage">1 · Development</span> —
+        mechanism design × collaborative machine learning</p>
+      <div class="rmap-project">
+        <p class="rmap-project-title">Paid with Models: Optimal Contract Design for Collaborative Machine Learning
+          <span class="rmap-venue">AAAI-25 (Oral)</span></p>
+        <p class="rmap-project-desc">Contract theory for collaborative ML when monetary rewards are unavailable:
+          trained models serve as payment, and well-designed contracts pre-empt collaboration failure among
+          heterogeneous participants.</p>
+        <p class="rmap-links">
+          <a href="https://arxiv.org/abs/2412.11122">arXiv</a> /
+          <a href="https://github.com/bingchen-wang/paid-with-models">code</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="rmap-panel" id="rmap-panel-2" role="tabpanel" aria-labelledby="rmap-tab-2">
+      <p class="rmap-bridge"><span class="rmap-bridge-stage">2 · Alignment</span> —
+        preference theory &amp; econometrics × AI alignment</p>
+      <div class="rmap-project">
+        <p class="rmap-project-title">Prompts to Proxies: Emulating Human Preferences via a Compact LLM Ensemble
+          <span class="rmap-venue">arXiv preprint · under review</span></p>
+        <p class="rmap-project-desc">Preference reconstruction via a weighted ensemble of prompt-defined proxy
+          agents—no finetuning, no demographic data—bridging pluralistic alignment and
+          social-scientific inference.</p>
+        <p class="rmap-links">
+          <a href="https://arxiv.org/abs/2509.11311">arXiv</a> /
+          <a href="https://bingchen-wang.github.io/p2p/">site</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="rmap-panel" id="rmap-panel-25" role="tabpanel" aria-labelledby="rmap-tab-25">
+      <p class="rmap-bridge"><span class="rmap-bridge-stage">2.5 · Pre-deployment evaluation</span> —
+        empirical social science × AI evaluation</p>
+      <p class="rmap-note">Synthetic agents make empirical inquiry less costly, but their validity
+        is exactly the question. These instruments probe the gap between AI agents and the humans and
+        institutions they stand in for, before institutional use.</p>
+      <div class="rmap-project">
+        <p class="rmap-project-title">SIM-PANEL
+          <span class="rmap-venue">open-source software</span></p>
+        <p class="rmap-project-desc">Synthetic A/B testing (RCT and self-selection) with agent panels for
+          resource-constrained evaluation pipelines.</p>
+        <p class="rmap-links">
+          <a href="https://bingchen-wang.github.io/sim-panel/">site</a> /
+          <a href="https://github.com/bingchen-wang/sim-panel">code</a>
+        </p>
+      </div>
+      <div class="rmap-project">
+        <p class="rmap-project-title">ResumeBench — LLM in a Hiring Position: Bias and Mitigation
+          <span class="rmap-venue">ongoing</span></p>
+        <p class="rmap-project-desc">An agentic fictitious-resume generator for synthetic auditing of LLM bias
+          mechanisms in hiring, without access to proprietary data.</p>
+      </div>
+    </div>
+
+    <div class="rmap-panel" id="rmap-panel-3" role="tabpanel" aria-labelledby="rmap-tab-3">
+      <p class="rmap-bridge"><span class="rmap-bridge-stage">3 · Deployment</span> —
+        empirical economics × AI evaluation &amp; strategic ML</p>
+      <div class="rmap-project">
+        <p class="rmap-project-title">AI-mediated hiring: agency, signalling and trust
+          <span class="rmap-venue">research programme</span></p>
+        <p class="rmap-project-desc">How AI screening and AI-assisted applications change jobseekers’
+          strategies, employers’ evaluation, and trust in formal hiring channels. Structured as
+          <em>measure</em> (jobseeker and employer surveys), <em>model</em> (econometrics and game theory),
+          and <em>mitigate</em> (mechanism design).</p>
+        <p class="rmap-status">Current work: problem framing, research design and public analysis.
+          Field studies await institutional partners—this stage is itself research under constraints.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- ===== /Research Map ===== -->
+
+          <!-- ===== Approach ===== -->
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
               <tr>
               <td style="padding:16px;width:100%;vertical-align:middle">
-                <h2 id="research">Research Interests</h2>
-                <p>
-                  I study how AI and ML systems interact with—and can be designed to better serve—human objectives, institutions, and incentives.
-				  Thematically, my interests include:
-                </p>
+                <h2 id="approach">Approach</h2>
 				<p>
-					<ul>
-						<li><b>Mechanism design and incentives for AI systems / digital markets</b>;</li>
-						<li style="margin-top: 10px;"><b>AI alignment and preference modeling</b>;</li>
-						<li style="margin-top: 10px;"><b>Bias and mitigation in large language models (LLMs)</b>;</li>
-						<li style="margin-top: 10px;"><b>Economics of AI and societal impact</b>.</li>					
-					</ul>
-				</p>
-				<p>
-				Design-wise, my research is shaped by a recurring principle: <em>reduce the fixed cost of asking a serious question</em>.
+				My research is shaped by a recurring principle: <em>reduce the fixed cost of asking a serious question</em>.
 				Working between machine learning and economics, I am drawn to problems where methodological ambition has been too tightly coupled to resource privilege—abundant compute, data access, institutional infrastructure, or bespoke human pipelines.
-				I build alternatives that relax these dependencies without trivializing the task:
+				I build alternatives that relax these dependencies without trivialising the task:
                 </p>
 				<p>
 					<ul>
-						<li>preference alignment without sensitive demographic data nor finetuning (P2P);</li>
+						<li>preference alignment without sensitive demographic data or finetuning (P2P);</li>
 						<li style="margin-top: 10px;">incentive design that enables small players to collaborate on model training none could afford alone (Paid with Models);</li>
 						<li style="margin-top: 10px;">synthetic agent feedback for resource-constrained product iteration (SIM-PANEL);</li>
-						<li style="margin-top: 10px;">synthetic auditing of algorithmic bias without access to proprietary data (ResumeBench, in development).</li>					
+						<li style="margin-top: 10px;">synthetic auditing of algorithmic bias without access to proprietary data (ResumeBench, in development).</li>
 					</ul>
 				</p>
 				<p>
@@ -101,7 +227,7 @@
             </tr>
           </tbody></table>
 
-
+          <!-- ===== Selected Works ===== -->
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
               <tr>
               <td style="padding:16px;width:100%;vertical-align:middle">
@@ -112,7 +238,6 @@
               </td>
             </tr>
           </tbody></table>
-
 
           <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
@@ -139,7 +264,7 @@
 							<p>
 							<i>Prompts to Proxies (P2P)</i> develops a new way to align large language models with the diversity of human preferences.
 							Instead of training or prompt-tuning one model per demographic group, P2P builds a compact ensemble of proxy agents—each defined by structured prompts that span a latent preference space.
-							Inspired by revealed preference theory, it learns how to weight these agents to reproduce real survey data, offering a cost-efficient and theoretically grounded approach to pluralistic alignment, bridging AI alignment and social-scientific inference.							
+							Inspired by revealed preference theory, it learns how to weight these agents to reproduce real survey data, offering a cost-efficient and theoretically grounded approach to pluralistic alignment, bridging AI alignment and social-scientific inference.
 						</p>
 						</td>
 						</tr>
@@ -177,7 +302,7 @@
 					<a href="data/pwm25/CollabML EOP Meeting paid with models.pdf"><em>slides (B-side)</em></a>
 					<p></p>
 					<p>
-					This work studies how to incentivize collaboration in machine learning when monetary rewards are unavailable. 
+					This work studies how to incentivize collaboration in machine learning when monetary rewards are unavailable.
 					Drawing on contract theory from economics, we model contributors’ incentives and information asymmetries to derive the optimal reward scheme theoretically and numerically in which trained models serve as payment.
 					The results highlight how well-designed contracts can pre-empt collaboration failures and create win-wins among heterogeneous participants.
 					</p>
@@ -192,12 +317,15 @@
     </tr>
           </tbody></table>
 
+		<!-- ===== Software ===== -->
 		<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 		<tr>
 			<td style="padding:16px;width:100%;vertical-align:middle">
 			<h2 id="software">Software</h2>
 			<p>
-				Research software I build and maintain.
+				Research software I build and maintain. These are not just accompanying codebases. They are
+				research instruments in their bright, built to put serious empirical questions about AI systems 
+				within reach without institutional scale.
 			</p>
 			</td>
 		</tr>
@@ -251,7 +379,38 @@
 		</tr>
 		</tbody></table>
 
+		<!-- ===== Selected Writing ===== -->
+		<table style="width:100%; margin:0 auto; border:0; border-spacing:0; padding:16px;"><tbody>
+		<tr>
+			<td>
+			<h2 id="writing">Selected Writing</h2>
+			<p>
+			Occasional public letters and commentary on policy, social coordination, and the institutional
+			consequences of AI.
+			</p>
+			<ul style="list-style-type: disc; padding-left: 20px;">
+				<!-- When the AI-mediated hiring piece is public, it slots in here as the first item. -->
+				<li>
+					<b>"Hong Kong’s Covid-19 testing regime must be refined so that it’s not all stick, no carrots"</b> —
+					<i>South China Morning Post</i>, Feb 2021.
+					<a href="https://www.scmp.com/comment/letters/article/3165653/hong-kongs-covid-19-testing-regime-must-be-refined-so-its-not-all">Read</a>
+				</li>
+				<li style="margin-top: 10px;">
+					<b>"Why death of George Floyd should make the world take a good look at itself"</b> —
+					<i>South China Morning Post</i>, Jun 2020.
+					<a href="https://www.scmp.com/comment/letters/article/3088368/why-death-george-floyd-should-make-world-take-good-look-itself">Read</a>
+				</li>
+				<li style="margin-top: 10px;">
+					<b>"For Hong Kong, the only way out of a prisoner’s dilemma is to give and take"</b> —
+					<i>South China Morning Post</i>, Nov 2019.
+					<a href="https://www.scmp.com/comment/letters/article/3039586/hong-kong-only-way-out-prisoners-dilemma-give-and-take">Read</a>
+				</li>
+			</ul>
+			</td>
+		</tr>
+		</tbody></table>
 
+		  <!-- ===== Presentations ===== -->
 		  <table style="width:100%; margin:0 auto; border:0; border-spacing:0; padding:16px;"><tbody>
             <tr>
               <td>
@@ -259,19 +418,19 @@
 
 				<ul style="list-style-type: disc; padding-left: 20px;">
 				<li>
-					<b>Let’s Talk About Trust — Paid with Models: Optimal Contract Design for Collaborative Machine Learning</b> — 
+					<b>Let’s Talk About Trust — Paid with Models: Optimal Contract Design for Collaborative Machine Learning</b> —
 					<i>End-of-Project Meeting, Trusted CollabML Lab, Singapore</i> (Invited Talk, Mar 2025)<br>
 					<a href="data/pwm25/CollabML EOP Meeting paid with models.pdf">Slides</a>
 				</li>
 
 				<li style="margin-top: 10px;">
-					<b>Fine-Tuning LLMs with Noisy Data for Political Argument Generation</b> — 
-					<i><a href="https://sites.google.com/servicenow.com/good-data-2025/overview">Good-Data Workshop</a>, AAAI-25, Philadelphia, USA</i> (Presented on behalf of <a href="https://www.linkedin.com/in/svetlana-churina/">Svetlana Churina</a> & <a href="https://kokiljaidka.wordpress.com/about/">Kokil Jaidka</a>, Mar 2025)<br>
-					<a href="https://drive.google.com/file/d/1O9LzBBXnAqscls6nA8LN5TfhfIoNnZ_N/view">Slides</a> 
+					<b>Fine-Tuning LLMs with Noisy Data for Political Argument Generation</b> —
+					<i><a href="https://sites.google.com/servicenow.com/good-data-2025/overview">Good-Data Workshop</a>, AAAI-25, Philadelphia, USA</i> (Presented on behalf of <a href="https://www.linkedin.com/in/svetlana-churina/">Svetlana Churina</a> &amp; <a href="https://kokiljaidka.wordpress.com/about/">Kokil Jaidka</a>, Mar 2025)<br>
+					<a href="https://drive.google.com/file/d/1O9LzBBXnAqscls6nA8LN5TfhfIoNnZ_N/view">Slides</a>
 				</li>
 
 				<li style="margin-top: 10px;">
-					<b>Paid with Models: Optimal Contract Design for Collaborative Machine Learning</b> — 
+					<b>Paid with Models: Optimal Contract Design for Collaborative Machine Learning</b> —
 					<i>AAAI-25, Philadelphia, USA</i> (Oral Presentation, Mar 2025)<br>
 					<a href="data/pwm25/paid with models slides.pdf">Slides</a> /
 					<a href="https://www.youtube.com/watch?v=LT9gkDK52xw">Recording</a>
@@ -282,6 +441,7 @@
             </tr>
           </tbody></table>
 
+	<!-- ===== Selected Awards ===== -->
 	<table style="width:100%; margin:0 auto; border:0; border-spacing:0; padding:16px;">
 	<tbody>
 		<tr>
@@ -296,36 +456,42 @@
 			<li style="margin-top: 10px;"><b>HKSAR Government Scholarship</b> — <i>City University of Hong Kong</i> (2015–2016)</li>
 			<li style="margin-top: 10px;"><b>Chan Feng Men-ling Chan Shuk-lin ELC Scholarship</b> — <i>City University of Hong Kong</i> (2014)</li>
 			<li style="margin-top: 10px;"><b>Full Tuition Scholarship</b> — <i>City University of Hong Kong</i> (2014)</li>
-			<li style="margin-top: 10px;"><b>Dean’s List (all enrolled semesters)</b> — <i>Columbia University & City University of Hong Kong</i> (2014–2018)</li>
+			<li style="margin-top: 10px;"><b>Dean’s List (all enrolled semesters)</b> — <i>Columbia University &amp; City University of Hong Kong</i> (2014–2018)</li>
 			</ul>
 		</td>
 		</tr>
 	</tbody>
 	</table>
 
-	<table style="width:100%; margin:0 auto; border:0; border-spacing:0; padding:16px;">
-	<tbody>
-		<tr>
-		<td>
-			<h2 id="beyond">Beyond Research</h2>
-			<p>
-			Beyond research, I am deeply enamoured with art and culture, often finding inspiration in the hidden corners of cities. 
-			This passion has led me to write occasional essays on art, history, and society—including an early art-historical study of a Tang sancai figurine at the Metropolitan Museum of Art. 
-			Read selected essays in my <a href="https://sites.google.com/view/bingchenwang/outside-the-box" target="_blank">Outside the Box</a> series.
-			</p>
-		</td>
-		</tr>
-	</tbody>
-	</table>
+	<!-- ===== Beyond Research ===== -->
+		<table style="width:100%; margin:0 auto; border:0; border-spacing:0; padding:16px;">
+		<tbody>
+			<tr>
+			<td>
+				<h2 id="beyond">Beyond Research</h2>
+				<p>
+				Outside research, I write occasional essays on art, history, and society, usually
+				starting from a particular object or place—the earliest an art-historical study
+				of a Tang sancai figurine at the Metropolitan Museum of Art. Some are in English,
+				some in Chinese.
+				</p>
+				<p>
+				Recent: <a href="essays/ai-free.html">"AI-Free Is the New Black"</a>, on
+				the coming counter-trend. Earlier pieces are collected in
+				<a href="https://sites.google.com/view/bingchenwang/outside-the-box" target="_blank">Outside the Box</a>.
+				</p>
+			</td>
+			</tr>
+		</tbody>
+		</table>
 
-		  
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>
               <td style="padding:0px">
                 <br>
 					<p style="text-align:center; font-size:small; color:#555;">
-					© 2026 Bingchen Wang.  
-					Original template by <a href="https://github.com/jonbarron/jonbarron_website">Jon Barron</a>. 
+					© 2026 Bingchen Wang.
+					Original template by <a href="https://github.com/jonbarron/jonbarron_website">Jon Barron</a>.
 					</p>
               </td>
             </tr>
@@ -333,5 +499,33 @@
         </td>
       </tr>
     </table>
+
+<script>
+(function () {
+  var root = document.getElementById('rmap');
+  if (!root) return;
+  root.classList.add('js');   /* enables tab behaviour; without JS all panels stay visible */
+
+  var tabs = root.querySelectorAll('.rmap-stage, .rmap-node');
+  var panels = root.querySelectorAll('.rmap-panel');
+
+  function activate(tab) {
+    tabs.forEach(function (s) {
+      var on = (s === tab);
+      s.classList.toggle('is-active', on);
+      s.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    panels.forEach(function (p) {
+      p.classList.toggle('is-active', p.id === 'rmap-panel-' + tab.dataset.stage);
+    });
+  }
+
+  tabs.forEach(function (s) {
+    s.addEventListener('mouseenter', function () { activate(s); }); // hover (desktop)
+    s.addEventListener('click',      function () { activate(s); }); // tap (mobile)
+    s.addEventListener('focus',      function () { activate(s); }); // keyboard
+  });
+})();
+</script>
   </body>
 </html>
