@@ -442,7 +442,26 @@ span.highlight {
 
 /* --- mobile: stack vertically, connectors turn vertical, loop simplifies --- */
 @media (max-width: 600px) {
-  .rmap-track { flex-direction: column; gap: 8px; }
+  .rmap-track { 
+    flex-direction: column; 
+    gap: 8px; 
+    width: 70%;
+    margin: 0 auto;}
+
+  .rmap-stage {
+    padding: 10px 12px 11px 12px;
+  }
+
+  .rmap-head {
+    padding-bottom: 7px;
+    margin-bottom: 7px;
+  }
+
+  .rmap-q {
+    font-size: 12.5px;
+    line-height: 1.4;
+  }
+
   .rmap-connector {
     flex: 0 0 auto;
     width: 2px;
@@ -462,15 +481,19 @@ span.highlight {
   }
   .rmap-node {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     gap: 8px;
     border-radius: 6px;
+    position: relative;
   }
+  
   .rmap-node-label {
-    position: static;
-    transform: none;
-    width: auto;
+    position: absolute;
+    left: calc(100% + 10px);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 130px;
     text-align: left;
   }
   .rmap-loop { display: none; }
@@ -544,3 +567,64 @@ span.highlight {
   color: #888;
 }
 /* ===== /Essays ===== */
+
+
+/* ===== Mobile layout fixes ===== */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 600px) {
+
+  /* Guard: no section may widen the page */
+  html, body { max-width: 100%; overflow-x: hidden; }
+
+  /* Stack all two-column rows */
+  .about-text, .about-photo,
+  .paper-media, .paper-body,
+  .soft-col {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+    padding: 8px 12px !important;
+  }
+
+  /* About: photo centred beneath the text, sensibly sized */
+  .about-photo img,
+  .about-photo .hoverZoomLink {
+    display: block;
+    width: 200px !important;
+    max-width: 42vw !important;
+    height: 200px !important;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    margin: 8px auto 18px auto;
+  }
+
+  /* Paper thumbnails: full measure, natural height */
+  .one {
+    width: 100%;
+    height: auto;
+  }
+  .one img {
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    margin: 0 auto;
+  }
+  .paper-media { text-align: center; }
+
+  /* Software: logo boxes release their fixed 260px */
+  .soft-col > div:first-of-type {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 220px;
+    margin: 0 auto 14px auto !important;
+  }
+}
+
+/* ===== /Mobile layout fixes ===== */
