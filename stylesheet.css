@@ -570,12 +570,13 @@ span.highlight {
 
 
 /* ===== Mobile layout fixes ===== */
-img {
-  max-width: 100%;
-  height: auto;
-}
 
 @media (max-width: 600px) {
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 
   /* Guard: no section may widen the page */
   html, body { max-width: 100%; overflow-x: hidden; }
@@ -604,20 +605,6 @@ img {
     margin: 8px auto 18px auto;
   }
 
-  /* Paper thumbnails: full measure, natural height */
-  .one {
-    width: 100%;
-    height: auto;
-  }
-  .one img {
-    display: block;
-    width: 100%;
-    max-width: 360px;
-    height: auto;
-    margin: 0 auto;
-  }
-  .paper-media { text-align: center; }
-
   /* Software: logo boxes release their fixed 260px */
   .soft-col > div:first-of-type {
     width: 100% !important;
@@ -627,4 +614,42 @@ img {
   }
 }
 
+
+/* Paper blocks need to stack earlier than phone layout */
+@media (max-width: 810px) {
+  .paper-entry table,
+  .paper-entry tbody,
+  .paper-entry tr,
+  .paper-entry td {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .paper-entry td {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .paper-entry td:first-child {
+    padding-bottom: 12px !important;
+    text-align: center;
+  }
+
+  .one {
+    width: 100%;
+    height: auto;
+  }
+
+  .one img {
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+}
 /* ===== /Mobile layout fixes ===== */
+
