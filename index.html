@@ -408,7 +408,6 @@
 			src="images/software_screenshots/lit.png"
 			alt="lit evidence library interface"
 			class="sw-shot zoomable-shot"
-			onclick="openScreenshot(this)"
 			>
 			<span class="papertitle">lit</span><br>
 			<em>Evidence workspace</em>
@@ -430,7 +429,6 @@
 			src="images/software_screenshots/ajar.png"
 			alt="Ajar career atlas interface"
 			class="sw-shot zoomable-shot"
-			onclick="openScreenshot(this)"
 			>
 			<span class="papertitle">ajar</span><br>
 			<em>Career research workspace</em>
@@ -598,44 +596,6 @@
     s.addEventListener('focus',      function () { activate(s); }); // keyboard
   });
 })();
-</script>
-
-
-<!-- Screenshot lightbox -->
-<div id="screenshot-lightbox" class="screenshot-lightbox" onclick="closeScreenshot(event)">
-  <button class="screenshot-lightbox-close" aria-label="Close enlarged screenshot">&times;</button>
-  <img id="screenshot-lightbox-img" alt="">
-</div>
-
-<script>
-function openScreenshot(img) {
-  var lightbox = document.getElementById('screenshot-lightbox');
-  var enlarged = document.getElementById('screenshot-lightbox-img');
-
-  enlarged.src = img.src;
-  enlarged.alt = img.alt;
-  lightbox.classList.add('is-open');
-  document.body.classList.add('lightbox-open');
-}
-
-function closeScreenshot(event) {
-  var lightbox = document.getElementById('screenshot-lightbox');
-
-  if (
-    event.target === lightbox ||
-    event.target.classList.contains('screenshot-lightbox-close')
-  ) {
-    lightbox.classList.remove('is-open');
-    document.body.classList.remove('lightbox-open');
-  }
-}
-
-document.addEventListener('keydown', function(event) {
-  if (event.key === 'Escape') {
-    document.getElementById('screenshot-lightbox').classList.remove('is-open');
-    document.body.classList.remove('lightbox-open');
-  }
-});
 </script>
   </body>
 </html>
