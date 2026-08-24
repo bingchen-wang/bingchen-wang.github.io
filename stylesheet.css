@@ -777,4 +777,10 @@ span.highlight {
   display: block;
   margin-bottom: 12px;
 }
+.sw-shot-link {
+  display: block;
+}
+.zoomable-shot {
+  cursor: zoom-in;
+}
 /* ===== /Software rubrics ===== */
