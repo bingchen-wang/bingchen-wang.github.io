@@ -326,11 +326,9 @@
 		<tr>
 			<td style="padding:16px;width:100%;vertical-align:middle">
 			<h2 id="software">Software</h2>
-			<p>
-				Research software I build and maintain. These are not just accompanying codebases. They are
-				research instruments in their own right, built to put serious empirical questions about AI systems 
-				within reach without institutional scale.
-			</p>
+			<p class="sw-rubric" style="margin-top:14px;">Research software</p>
+			<p class="sw-rubric-note">Research software I built and maintain.</p>
+			
 			</td>
 		</tr>
 		</tbody></table>
@@ -388,6 +386,71 @@
 			</td>
 		</tr>
 		</tbody></table>
+
+
+				<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+		<tr>
+			<td style="padding:16px;width:100%;vertical-align:middle">
+			<p class="sw-rubric">Cowork tools</p>
+			<p class="sw-rubric-note">
+				I build tools around the human workflow first, then design ways for AI to participate in them. 
+				AI can search, read and contribute, but the human remains the central arbiter of interpretation, verification and judgement.
+				These are tools designed for working with AI that remain useful without it.
+			</p>
+			</td>
+		</tr>
+		</tbody></table>
+
+		<table style="width:100%;border:0px;border-spacing:0px 12px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+		<tr>
+			<td style="padding:16px;width:50%;vertical-align:top;">
+			<img
+			src="images/software_screenshots/lit.png"
+			alt="lit evidence library interface"
+			class="sw-shot zoomable-shot"
+			onclick="openScreenshot(this)"
+			>
+			<span class="papertitle">lit</span><br>
+			<em>Evidence workspace</em>
+			<p style="margin-top:8px;">
+				Literature reviews fail when extraction is tedious and notes go unstructured, so a corpus becomes
+				unauditable long before it becomes large. lit keeps a schema-driven corpus in reviewable CSV, BibTeX
+				and Markdown. It allows for agent-assisted reviews, but 
+				reserves verification, interpretation and judgement for the human. It also brings study notes and cross-note
+				searching into the same workspace, enabling review and learning to coalesce. 
+				A reading atlas lets users log reading time, track progress and earn accolades along the way.
+			</p>
+			<p style="margin-top:8px;color:#555;">
+				Status: small-scale prototyping. Demo on request.
+			</p>
+			</td>
+
+			<td style="padding:16px;width:50%;vertical-align:top;">
+			<img
+			src="images/software_screenshots/ajar.png"
+			alt="Ajar career atlas interface"
+			class="sw-shot zoomable-shot"
+			onclick="openScreenshot(this)"
+			>
+			<span class="papertitle">ajar</span><br>
+			<em>Career research workspace</em>
+			<p style="margin-top:8px;">
+				Job searching can be an exhausting and nerve-racking process: fragmented information, scarce feedback,
+				constantly changing market conditions and end-to-end tracking that falls entirely on you.
+				ajar runs on your machine, separates factual opportunity records from
+				human-owned decisions, and keeps the reasons behind past choices as durable context. 
+				On its own, ajar is a one-stop platform to organise materials and applications.
+				With an AI agent, you set search criteria, review what it finds, make decisions 
+				and offer feedback that shapes the next round.
+			</p>
+			<p style="margin-top:8px;color:#555;">
+				Status: small-scale prototype. Demo on request.
+			</p>
+			</td>
+		</tr>
+		</tbody></table>
+
+
 
 		<!-- ===== Selected Writing ===== -->
 		<table style="width:100%; margin:0 auto; border:0; border-spacing:0; padding:16px;"><tbody>
@@ -535,6 +598,44 @@
     s.addEventListener('focus',      function () { activate(s); }); // keyboard
   });
 })();
+</script>
+
+
+<!-- Screenshot lightbox -->
+<div id="screenshot-lightbox" class="screenshot-lightbox" onclick="closeScreenshot(event)">
+  <button class="screenshot-lightbox-close" aria-label="Close enlarged screenshot">&times;</button>
+  <img id="screenshot-lightbox-img" alt="">
+</div>
+
+<script>
+function openScreenshot(img) {
+  var lightbox = document.getElementById('screenshot-lightbox');
+  var enlarged = document.getElementById('screenshot-lightbox-img');
+
+  enlarged.src = img.src;
+  enlarged.alt = img.alt;
+  lightbox.classList.add('is-open');
+  document.body.classList.add('lightbox-open');
+}
+
+function closeScreenshot(event) {
+  var lightbox = document.getElementById('screenshot-lightbox');
+
+  if (
+    event.target === lightbox ||
+    event.target.classList.contains('screenshot-lightbox-close')
+  ) {
+    lightbox.classList.remove('is-open');
+    document.body.classList.remove('lightbox-open');
+  }
+}
+
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    document.getElementById('screenshot-lightbox').classList.remove('is-open');
+    document.body.classList.remove('lightbox-open');
+  }
+});
 </script>
   </body>
 </html>
