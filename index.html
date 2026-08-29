@@ -25,7 +25,7 @@
 	<nav class="topnav">
 	<a href="#about">About</a>
 	<a href="#research">Research</a>
-	<a href="#works">Works</a>
+	<a href="#works">Publications</a>
 	<a href="#software">Software</a>
 	<a href="#writing">Writing</a>
 	<a href="#beyond">Beyond</a>
@@ -38,35 +38,28 @@
           <!-- ===== About ===== -->
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr style="padding:0px">
-              <td class="about-text" style="padding:2.5%;width:63%;vertical-align:middle">
+              <td class="about-text" style="padding:16px;width:63%;vertical-align:middle">
                 <p class="name" style="text-align: center;">
                   Bingchen Wang
                 </p>
 				<h2 id="about"></h2>
                 <p>
-				I am an independent researcher studying how human, artificial, and hybrid intelligent
-				systems coordinate, represent, and decide under incentive, informational, and
-				institutional constraints—across the lifecycle of AI systems, from development
-				to alignment to deployment.
+				I am an independent researcher working at the nexus of machine learning and economics.
+				I am interested in how incentives, information, and institutions shape the development 
+				and use of AI systems, and how AI, once deployed, reshapes them in turn. My recent work
+				studies incentive design for collaborative machine learning and the reconstruction of
+				population preferences using ensembles of large-language-model (LLM) agents.
 				</p>
 				<p>
-				My work combines machine learning, economics, statistical inference, and empirical
-				social science: contract theory for collaborative machine learning
-				(<em>Paid with Models</em>, AAAI-25 oral), population-level preference reconstruction
-				with compact LLM ensembles (<em>Prompts to Proxies</em>, under review),
-				synthetic-panel evaluation tooling (SIM-PANEL, open source), and mechanism-based
-				research on AI-mediated hiring (ResumeBench, ongoing).
-				</p>
-				<p>
-				Previously, I was a research assistant at the National University of Singapore,
-				working on mechanism design and collaborative learning systems, and earlier at the
-				University of Hong Kong on political economy projects. I hold an MPhil in Economics
+				Previously, I worked on mechanism design and collaborative learning systems at the 
+				National University of Singapore, and earlier on political economy projects at the
+				University of Hong Kong. I hold an MPhil in Economics
 				(Distinction) from the University of Oxford, where I worked under
 				<a href="https://www.nuffield.ox.ac.uk/people/profiles/david-hendry/">Prof. David Hendry</a> and
 				<a href="https://users.ox.ac.uk/~nuff0231/">Prof. Jennifer Castle</a> and contributed to
 				<a href="https://www.climateeconometrics.org">Climate Econometrics</a>, a B.A. in
 				Mathematics–Statistics from Columbia University, and a B.Sc. (Hons) in Computing
-				Mathematics from CityU Hong Kong.
+				Mathematics from the City University of Hong Kong.
 				</p>
                 <p style="text-align:center">
                   <a href="mailto:bw2506@columbia.edu">Email</a> &nbsp;/&nbsp;
@@ -77,16 +70,23 @@
 				  <a href="https://sites.google.com/view/bingchenwang">Sites</a>
                 </p>
               </td>
-              <td class="about-photo" style="padding:2.5%;width:37%;max-width:37%">
+              <td class="about-photo" style="padding:16px;width:37%;max-width:37%">
                 <a href="images/BingchenWang.png"><img style="width:100%;max-width:100%;object-fit: cover;" alt="profile photo" src="images/BingchenWang.png" class="hoverZoomLink"></a>
               </td>
             </tr>
           </tbody></table>
 
-		  <!-- ===== Research Map: Intelligence under I³ Constraints ===== -->
+		  <!-- ===== Research Map ===== -->
 <div class="rmap" id="rmap">
-  <h2 class="rmap-title" id = "research">Intelligence under I<sup>3</sup> constraints</h2>
-  <p class="rmap-sub">Incentive · Informational · Institutional</p>
+  <h2 class="rmap-title" id="research">Research</h2>
+
+  <p class="rmap-intro">
+    I arrived at AI by way of economics and statistics. That route has left its mark on the questions my projects
+	tend to start with: Who bears the cost of building a system, and what would make participation worthwhile? 
+	What can the available data actually identify and justify? How do people behave once they know a model is judging 
+	them? How do institutional rules and norms shape the use of AI and vice versa? These questions recur at different points in
+    a system's life. The map below shows where my work engages with them.
+  </p>
 
   <div class="rmap-track" role="tablist" aria-label="Research stages">
 
@@ -94,7 +94,7 @@
             aria-selected="true" aria-controls="rmap-panel-1" id="rmap-tab-1">
       <span class="rmap-head"><span class="rmap-num">1</span>
       <span class="rmap-name">Development</span></span>
-      <span class="rmap-q">Who gets to develop AI, and on what terms?</span>
+      <span class="rmap-q">Who can afford to build it, and on what terms?</span>
     </button>
 
     <span class="rmap-connector" aria-hidden="true"></span>
@@ -102,16 +102,8 @@
     <button class="rmap-stage" data-stage="2" role="tab"
             aria-selected="false" aria-controls="rmap-panel-2" id="rmap-tab-2">
       <span class="rmap-head"><span class="rmap-num">2</span>
-      <span class="rmap-name">Alignment</span></span>
-      <span class="rmap-q">Whose preferences does AI represent, and how can it represent them efficiently?</span>
-    </button>
-
-    <span class="rmap-connector plain" aria-hidden="true"></span>
-
-    <button class="rmap-node" data-stage="25" role="tab"
-            aria-selected="false" aria-controls="rmap-panel-25" id="rmap-tab-25">
-      <span class="rmap-node-dot" aria-hidden="true">+</span>
-      <span class="rmap-node-label">Pre-deployment evaluation</span>
+      <span class="rmap-name">Representation</span></span>
+      <span class="rmap-q">Whose preferences does AI represent, and at what cost?</span>
     </button>
 
     <span class="rmap-connector" aria-hidden="true"></span>
@@ -119,26 +111,31 @@
     <button class="rmap-stage" data-stage="3" role="tab"
             aria-selected="false" aria-controls="rmap-panel-3" id="rmap-tab-3">
       <span class="rmap-head"><span class="rmap-num">3</span>
+      <span class="rmap-name">Evaluation</span></span>
+      <span class="rmap-q">What can synthetic evidence identify about real people and systems, 
+		and by what measure?</span>
+    </button>
+
+    <span class="rmap-connector" aria-hidden="true"></span>
+
+    <button class="rmap-stage" data-stage="4" role="tab"
+            aria-selected="false" aria-controls="rmap-panel-4" id="rmap-tab-4">
+      <span class="rmap-head"><span class="rmap-num">4</span>
       <span class="rmap-name">Deployment</span></span>
-      <span class="rmap-q">Once deployed, how does AI reshape opportunity, incentives and institutional decision-making?</span>
+      <span class="rmap-q">How does AI reshape opportunity and decision-making, and via what mechanisms?</span>
     </button>
 
   </div>
 
-  <div class="rmap-loop" aria-hidden="true"></div>
-  <p class="rmap-loop-caption">What deployment reveals feeds back into development.</p>
-
   <div class="rmap-panels">
 
     <div class="rmap-panel is-active" id="rmap-panel-1" role="tabpanel" aria-labelledby="rmap-tab-1">
-      <p class="rmap-bridge"><span class="rmap-bridge-stage">1 · Development</span> —
-        mechanism design × collaborative machine learning</p>
       <div class="rmap-project">
-        <p class="rmap-project-title">Paid with Models: Optimal Contract Design for Collaborative Machine Learning
+        <p class="rmap-project-title">Paid with Models
           <span class="rmap-venue">AAAI-25 (Oral)</span></p>
-        <p class="rmap-project-desc">Contract theory for collaborative ML when monetary rewards are unavailable:
-          trained models serve as payment, and well-designed contracts pre-empt collaboration failure among
-          heterogeneous participants.</p>
+        <p class="rmap-project-desc">Contract theory for collaborative ML when monetary rewards are unavailable: 
+			trained models serve as payment, and well-designed contracts pre-empt collaboration failure among 
+			heterogeneous participants.</p>
         <p class="rmap-links">
           <a href="https://arxiv.org/abs/2412.11122">arXiv</a> /
           <a href="https://github.com/bingchen-wang/paid-with-models">code</a>
@@ -147,14 +144,11 @@
     </div>
 
     <div class="rmap-panel" id="rmap-panel-2" role="tabpanel" aria-labelledby="rmap-tab-2">
-      <p class="rmap-bridge"><span class="rmap-bridge-stage">2 · Alignment</span> —
-        preference theory &amp; econometrics × AI alignment</p>
       <div class="rmap-project">
-        <p class="rmap-project-title">Prompts to Proxies: Emulating Human Preferences via a Compact LLM Ensemble
-          <span class="rmap-venue">arXiv preprint · under review</span></p>
-        <p class="rmap-project-desc">Preference reconstruction via a weighted ensemble of prompt-defined proxy
-          agents—no finetuning, no demographic data—bridging pluralistic alignment and
-          social-scientific inference.</p>
+        <p class="rmap-project-title">Prompts to Proxies
+          <span class="rmap-venue">preprint &middot; under review</span></p>
+        <p class="rmap-project-desc">Preference reconstruction via a weighted ensemble of prompt-defined proxy agents—no
+			finetuning, no demographic data—bridging pluralistic alignment and social-scientific inference.</p>
         <p class="rmap-links">
           <a href="https://arxiv.org/abs/2509.11311">arXiv</a> /
           <a href="https://bingchen-wang.github.io/p2p-website/">site</a>
@@ -162,79 +156,60 @@
       </div>
     </div>
 
-    <div class="rmap-panel" id="rmap-panel-25" role="tabpanel" aria-labelledby="rmap-tab-25">
-      <p class="rmap-bridge"><span class="rmap-bridge-stage">2.5 · Pre-deployment evaluation</span> —
-        empirical social science × AI evaluation</p>
-      <p class="rmap-note">Synthetic agents make empirical inquiry less costly, but their validity
-        is exactly the question. These instruments probe the gap between AI agents and the humans and
-        institutions they stand in for, before institutional use.</p>
+    <div class="rmap-panel" id="rmap-panel-3" role="tabpanel" aria-labelledby="rmap-tab-3">
+      <p class="rmap-note">Synthetic agents make empirical inquiry less costly, but their validity is exactly the question. 
+		These instruments probe the gap between AI agents and the humans and institutions they stand in for, 
+		before institutional use.</p>
       <div class="rmap-project">
         <p class="rmap-project-title">SIM-PANEL
-          <span class="rmap-venue">open-source software</span></p>
-        <p class="rmap-project-desc">Synthetic A/B testing (RCT and self-selection) with agent panels for
-          resource-constrained evaluation pipelines.</p>
+          <span class="rmap-venue">open source</span></p>
+        <p class="rmap-project-desc">Synthetic A/B testing (RCT and self-selection) with agent panels for resource-constrained 
+			evaluation pipelines.</p>
         <p class="rmap-links">
           <a href="https://bingchen-wang.github.io/sim-panel/">site</a> /
           <a href="https://github.com/bingchen-wang/sim-panel">code</a>
         </p>
       </div>
       <div class="rmap-project">
-        <p class="rmap-project-title">ResumeBench — LLM in a Hiring Position: Bias and Mitigation
-          <span class="rmap-venue">ongoing</span></p>
-        <p class="rmap-project-desc">An agentic fictitious-resume generator for synthetic auditing of LLM bias
-          mechanisms in hiring, without access to proprietary data.</p>
+        <p class="rmap-project-title">ResumeBench
+          <span class="rmap-venue">in progress</span></p>
+        <p class="rmap-project-desc">An agentic fictitious-resume generator for synthetic auditing of LLM bias mechanisms in hiring, 
+			without access to proprietary data.</p>
       </div>
     </div>
 
-    <div class="rmap-panel" id="rmap-panel-3" role="tabpanel" aria-labelledby="rmap-tab-3">
-      <p class="rmap-bridge"><span class="rmap-bridge-stage">3 · Deployment</span> —
-        empirical economics × AI evaluation &amp; strategic ML</p>
+    <div class="rmap-panel" id="rmap-panel-4" role="tabpanel" aria-labelledby="rmap-tab-4">
       <div class="rmap-project">
-        <p class="rmap-project-title">AI-mediated hiring: agency, signalling and trust
-          <span class="rmap-venue">research programme</span></p>
-        <p class="rmap-project-desc">How AI screening and AI-assisted applications change jobseekers’
-          strategies, employers’ evaluation, and trust in formal hiring channels. Structured as
-          <em>measure</em> (jobseeker and employer surveys), <em>model</em> (econometrics and game theory),
-          and <em>mitigate</em> (mechanism design).</p>
-        <p class="rmap-status">Current work: problem framing, research design and public analysis.
-          Field studies await institutional partners—this stage is itself research under constraints.</p>
+        <p class="rmap-project-title">AI-mediated hiring
+          <span class="rmap-venue">in design</span></p>
+        <p class="rmap-project-desc">Screening algorithms and AI-assisted applications are changing both
+          sides of the labour market at once: how candidates signal, how employers read those signals,
+          and whether either still trusts the formal channel.</p>
+        <p class="rmap-status">At the design stage. I am looking for institutional partners for the
+          survey and field components.</p>
       </div>
     </div>
 
+	
   </div>
+
+  <div class="rmap-post">
+  <p>
+    Across these projects, a recurring practical concern is access: many interesting questions
+    become difficult to pursue when they require proprietary data, substantial compute, or
+    institutional infrastructure. Where possible, I try to reduce the fixed cost of asking a
+    serious question without trivialising the problem itself.
+  </p>
+</div>
+
 </div>
 <!-- ===== /Research Map ===== -->
-
-          <!-- ===== Approach ===== -->
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-              <tr>
-              <td style="padding:16px;width:100%;vertical-align:middle">
-                <h2 id="approach">Approach</h2>
-				<p>
-				My research is shaped by a recurring principle: <em>reduce the fixed cost of asking a serious question</em>.
-				Working between machine learning and economics, I am drawn to problems where methodological ambition has been too tightly coupled to resource privilege—abundant compute, data access, institutional infrastructure, or bespoke human pipelines.
-				I build alternatives that relax these dependencies without trivialising the task:
-                </p>
-				<p>
-					<ul>
-						<li>preference alignment without sensitive demographic data or finetuning (P2P);</li>
-						<li style="margin-top: 10px;">incentive design that enables small players to collaborate on model training none could afford alone (Paid with Models);</li>
-						<li style="margin-top: 10px;">synthetic agent feedback for resource-constrained product iteration (SIM-PANEL);</li>
-						<li style="margin-top: 10px;">synthetic auditing of algorithmic bias without access to proprietary data (ResumeBench, in development).</li>
-					</ul>
-				</p>
-				<p>
-				What threads these projects together is the conviction that accessibility can be treated as a first-class design parameter rather than an afterthought.
-                </p>
-              </td>
-            </tr>
-          </tbody></table>
 
           <!-- ===== Selected Works ===== -->
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
               <tr>
               <td style="padding:16px;width:100%;vertical-align:middle">
-                <h2 id="works">Selected Works</h2>
+                <h2 id="works">Publications</h2>
               </td>
             </tr>
           </tbody></table>
@@ -256,7 +231,7 @@
 							<br>
 							<b>Bingchen Wang*</b>, Zi-Yu Khoo, Jingtan Wang
 							<br>
-							<em>Preprint out. Under review, 2026</em>
+							<em>Preprint &middot; under review</em>
 							<br>
 							<a href="https://arxiv.org/abs/2509.11311">arXiv</a> /
 							<a href="https://bingchen-wang.github.io/p2p-website/">site</a>
@@ -264,11 +239,10 @@
 							<p>
 							<i>Prompts to Proxies (P2P)</i> develops a new way to align large language models with the diversity of human preferences.
 							Instead of training or prompt-tuning one model per demographic group, P2P builds a compact ensemble of proxy agents—each defined by structured prompts that span a latent preference space.
-							Inspired by revealed preference theory, it learns how to weight these agents to reproduce real survey data, offering a cost-efficient and theoretically grounded approach to pluralistic alignment, bridging AI alignment and social-scientific inference.
+							It learns how to weight these agents to reproduce real survey data, offering a cost-efficient and theoretically grounded approach to pluralistic alignment, bridging AI alignment and social-scientific inference.
 							</p>
 							<p class="muted" style="margin-top:8px;">
-								<strong>Contribution note:</strong> I originated this project and developed its theory, proofs, methodology, and research software.
-								I was also responsible for the experimental design, figures, framing, and writing.
+								<strong>My role:</strong> project conception, theory and methodology, proofs, experiments, research software, figures, and writing.
 							</p>
 						</td>
 						</tr>
@@ -311,7 +285,7 @@
 					The results highlight how well-designed contracts can pre-empt collaboration failures and create win-wins among heterogeneous participants.
 					</p>
 					<p class="muted" style="margin-top:8px;">
-						<strong>Contribution note:</strong> I originated the project and was responsible for its framing, theory, proofs, experiments, figures, and writing.
+						<strong>My role:</strong> project conception, theory, proofs, experiments, figures, and writing.
 					</p>
 				</td>
 			</tr>
@@ -327,7 +301,6 @@
 			<td style="padding:16px;width:100%;vertical-align:middle">
 			<h2 id="software">Software</h2>
 			<p class="sw-rubric" style="margin-top:14px;">Research software</p>
-			<p class="sw-rubric-note">Research software I built and maintain.</p>
 			
 			</td>
 		</tr>
@@ -514,28 +487,6 @@
 				</td>
             </tr>
           </tbody></table>
-
-	<!-- ===== Selected Awards ===== -->
-	<table style="width:100%; margin:0 auto; border:0; border-spacing:0; padding:16px;">
-	<tbody>
-		<tr>
-		<td>
-			<h2 id="awards">Selected Awards</h2>
-
-			<ul style="list-style-type: disc; padding-left: 20px;">
-			<li><b>Phi Beta Kappa Society</b> — <i>Columbia University</i> (2019)</li>
-			<li style="margin-top: 10px;"><b>Honor Society Fellow</b> — <i>School of General Studies, Columbia University</i> (2018)</li>
-			<li style="margin-top: 10px;"><b>Joseph and Norma Preziosi Endowed Scholarship</b> — <i>Columbia University</i> (2018)</li>
-			<li style="margin-top: 10px;"><b>Dean’s Scholarship</b> — <i>College of Science and Engineering, City University of Hong Kong</i> (2017)</li>
-			<li style="margin-top: 10px;"><b>HKSAR Government Scholarship</b> — <i>City University of Hong Kong</i> (2015–2016)</li>
-			<li style="margin-top: 10px;"><b>Chan Feng Men-ling Chan Shuk-lin ELC Scholarship</b> — <i>City University of Hong Kong</i> (2014)</li>
-			<li style="margin-top: 10px;"><b>Full Tuition Scholarship</b> — <i>City University of Hong Kong</i> (2014)</li>
-			<li style="margin-top: 10px;"><b>Dean’s List (all enrolled semesters)</b> — <i>Columbia University &amp; City University of Hong Kong</i> (2014–2018)</li>
-			</ul>
-		</td>
-		</tr>
-	</tbody>
-	</table>
 
 	<!-- ===== Beyond Research ===== -->
 		<table style="width:100%; margin:0 auto; border:0; border-spacing:0; padding:16px;">
