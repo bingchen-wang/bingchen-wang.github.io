@@ -815,4 +815,29 @@ span.highlight {
 .zoomable-shot {
   cursor: zoom-in;
 }
+
+.sw-demo {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 1440 / 900;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  display: block;
+  margin-bottom: 12px;
+  background: #12201d;
+}
+
+/* ===== Software media: dark mode ===== */
+/* Must sit after .sw-shot / .sw-demo: the main dark block (line 687) comes
+   earlier in the file, and media queries add no specificity, so a rule placed
+   there would lose to the later light-mode declaration. */
+@media (prefers-color-scheme: dark) {
+  .sw-shot,
+  .sw-demo {
+    border-color: #333;
+  }
+}
+/* ===== /Software media: dark mode ===== */
+
 /* ===== /Software rubrics ===== */
