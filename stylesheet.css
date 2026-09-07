@@ -806,6 +806,7 @@ span.highlight {
   width: 100%;
   border: 1px solid #e2e2e2;
   border-radius: 6px;
+  object-fit: cover;
   display: block;
   margin-bottom: 12px;
 }
@@ -821,6 +822,7 @@ span.highlight {
   max-width: 100%;
   height: auto;
   aspect-ratio: 1440 / 900;
+  object-fit: cover;
   border: 1px solid #e2e2e2;
   border-radius: 6px;
   display: block;
