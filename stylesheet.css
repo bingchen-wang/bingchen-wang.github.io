@@ -106,7 +106,7 @@ a {
 
 a:focus,
 a:hover {
-  color: #f09228;
+  color: #8c2a33;
   text-decoration: none;
 }
 
@@ -129,7 +129,7 @@ strong {
   color: #555;
 }
 
-.accent { color: #e8590c; }
+.accent { color: #8c2a33; }
 
 h2 {
   margin: 0;
@@ -263,7 +263,7 @@ span.highlight {
 }
 .rmap-stage:focus-visible,
 .rmap-node:focus-visible {
-  outline: 2px solid #1971c2;
+  outline: 2px solid #a5823f;
   outline-offset: 2px;
 }
 .rmap-head {
@@ -339,9 +339,9 @@ span.highlight {
   box-sizing: border-box;
   text-align: center;
   border-radius: 50%;
-  border: 2px solid #0b7285;
+  border: 2px solid #9a9a9a;
   background: #fff;
-  color: #0b7285;
+  color: #777;
   font-size: 17px;
   font-weight: 700;
   transition: background 0.15s ease, color 0.15s ease;
@@ -358,19 +358,44 @@ span.highlight {
   text-align: center;
 }
 .rmap-node.is-active .rmap-node-dot {
-  background: #0b7285;
+  background: #a5823f;
+  border-color: #a5823f;
   color: #fff;
 }
 .rmap-node.is-active .rmap-node-label {
-  color: #0b7285;
+  color: #8a6a2c;
   font-weight: 700;
 }
 
-/* --- per-stage accent (muted versions of the slide palette) --- */
-.rmap-stage[data-stage="1"].is-active { border-top-color: #e8590c; background: #fff7f2; }
-.rmap-stage[data-stage="2"].is-active { border-top-color: #2f9e44; background: #f4faf5; }
-.rmap-stage[data-stage="3"].is-active { border-top-color: #0b7285; background: #f1f9fa; }
-.rmap-stage[data-stage="4"].is-active { border-top-color: #1971c2; background: #f2f8fd; }
+/* --- selection: brass marks the chosen stage; the stages themselves stay neutral --- */
+.rmap-stage.is-active { border-top-color: #a5823f; background: #fff; }
+
+/* --- a botanical watermark for each stage, in brass hairline, bleeding off the lower right:
+       seedling (development), fern (representation), laurel in bloom (evaluation), dandelion (deployment):
+       a plant's life from sprouting to setting seed.
+       The SVGs are masks, so their colour comes from here; the chosen stage's plant comes up a little. --- */
+/* overflow: clip (not hidden) trims the plant without letting a stacked card shrink below its text */
+.rmap-stage { position: relative; overflow: clip; }
+.rmap-stage > span { position: relative; z-index: 1; }
+.rmap-stage::after {
+  content: "";
+  position: absolute;
+  right: -10px;
+  bottom: -12px;
+  width: 74px;
+  height: 89px;
+  background: #a5823f;
+  opacity: 0.16;
+  -webkit-mask: var(--rmap-motif) no-repeat center / contain;
+  mask: var(--rmap-motif) no-repeat center / contain;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+.rmap-stage.is-active::after { opacity: 0.32; }
+.rmap-stage[data-stage="1"] { --rmap-motif: url("images/ornaments/seedling.svg"); }
+.rmap-stage[data-stage="2"] { --rmap-motif: url("images/ornaments/fern.svg"); }
+.rmap-stage[data-stage="3"] { --rmap-motif: url("images/ornaments/laurel-bloom.svg"); }
+.rmap-stage[data-stage="4"] { --rmap-motif: url("images/ornaments/dandelion.svg"); }
 
 /* --- feedback loop: deployment -> development --- */
 .rmap-loop {
@@ -421,10 +446,7 @@ span.highlight {
   display: block;
 }
 
-#rmap-panel-1 { border-left-color: #e8590c; }
-#rmap-panel-2 { border-left-color: #2f9e44; }
-#rmap-panel-3 { border-left-color: #0b7285; }
-#rmap-panel-4 { border-left-color: #1971c2; }
+#rmap-panel-1, #rmap-panel-2, #rmap-panel-3, #rmap-panel-4 { border-left-color: #a5823f; }
 
 .rmap-bridge {
   font-size: 12.5px;
@@ -480,6 +502,7 @@ span.highlight {
     margin: 0 auto;}
 
   .rmap-stage {
+    flex: none;
     padding: 10px 12px 11px 12px;
   }
 
@@ -537,6 +560,44 @@ span.highlight {
 .essay-body {
   padding-top: 0;              /* no fixed nav on essay pages */
 }
+/* Ink bamboo (墨竹) in brass, painted as brush strokes. A small grove stands at the left edge, its stems
+   nearly upright with a living bend, twigs reaching right into the margin and some running off the screen's
+   edge; a slender spray answers it in the right margin (呼应), so the two margins balance and the eye rests
+   on the text between them. Both stay put while the reader scrolls, and never reach the text column. */
+.essay-body::before,
+.essay-body::after {
+  content: "";
+  position: fixed;
+  width: calc((100vw - 660px) / 2);
+  max-width: 420px;
+  pointer-events: none;
+  z-index: 0;
+}
+.essay-body::before {
+  left: 0;
+  bottom: 0;
+  height: 100vh;                      /* rising from the foot of the window; the crown reaches up towards the title */
+  background: url("images/ornaments/bamboo.svg") no-repeat left bottom / contain;
+}
+.essay-body::after {
+  right: 0;
+  top: 44vh;
+  height: 36vh;
+  background: url("images/ornaments/bamboo-spray.svg") no-repeat right center / contain;
+}
+.essay { position: relative; z-index: 1; }
+@media (max-width: 1000px) {
+  /* no margins to hold them: the main stand becomes a faint spray at the top left, and the answer is left out */
+  .essay-body::before {
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 250px;
+    max-width: none;
+    opacity: 0.45;
+  }
+  .essay-body::after { display: none; }
+}
 .essay {
   max-width: 620px;            /* narrower measure for sustained reading */
   margin: 0 auto;
@@ -589,7 +650,7 @@ span.highlight {
   line-height: 1.45;
   margin: 32px 0 12px 0;
   padding: 9px 0 9px 14px;
-  border-left: 3px solid #1772d0;
+  border-left: 3px solid #a5823f;   /* brass, the site's highlight colour */
 }
 .essay-assumption-label {
   display: block;
@@ -648,8 +709,19 @@ span.highlight {
   position: absolute;
   inset: 0 -16px;
   z-index: -1;
-  background: linear-gradient(90deg, rgba(23, 114, 208, 0.08) 0%, rgba(23, 114, 208, 0.025) 68%, transparent 100%);
-  border-left: 3px solid #1772d0;
+  /* the same quiet card as the map stages, in the same language: a brass rule above the heading,
+     and an olive branch (an offer of goodwill) in brass hairline, bleeding off the lower right */
+  background: url("images/ornaments/olive-branch.svg") right 4px top 0 / auto 188px no-repeat, #fafafa;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+}
+.working-together h2::before {
+  content: "";
+  display: block;
+  width: 28px;
+  height: 2px;
+  margin-bottom: 12px;
+  background: #a5823f;
 }
 .working-together p {
   max-width: 650px;
@@ -690,7 +762,7 @@ span.highlight {
     height: auto !important;
     aspect-ratio: 1 / 1;
     object-fit: cover;
-    object-position: center;
+    object-position: 50% 10%;          /* the circle holds the eyes on its upper golden line */
     border-radius: 50%;
     margin: 8px auto 18px auto;
   }
@@ -753,12 +825,12 @@ span.highlight {
   body, td, th, tr, p, strong, h2, .name, .papertitle { color: #e6e6e6; }
 
   a { color: #8ab4f8; }
-  a:focus, a:hover { color: #f6b26b; }
+  a:focus, a:hover { color: #d9858b; }
 
   .muted { color: #a6a6a6; }
 
-  /* (Oral Presentation): pure red glares on dark */
-  .accent { color: #ff922b; }
+  /* (Oral Presentation): oxblood lifted to a soft rose, so it reads on dark */
+  .accent { color: #d9858b; }
 
   /* --- Figures: white plate so line diagrams stay legible --- */
   .one img {
@@ -771,7 +843,7 @@ span.highlight {
   /* --- Top navigation --- */
   .topnav { background-color: rgba(17, 17, 17, 0.92); border-bottom-color: #333; }
   .topnav a { color: #e0e0e0; }
-  .topnav a:hover, .topnav a:focus { color: #f6b26b; text-decoration: none; }
+  .topnav a:hover, .topnav a:focus { color: #d9858b; text-decoration: none; }
 
   /* --- Paper cards --- */
   .paper-entry { background-color: #181818; }
@@ -797,10 +869,10 @@ span.highlight {
   .rmap-connector { background: #444; }
   .rmap-connector::after { border-left-color: #555; }
 
-  .rmap-node-dot { background: #111; border-color: #3bc9db; color: #3bc9db; }
+  .rmap-node-dot { background: #111; border-color: #666; color: #a6a6a6; }
   .rmap-node-label { color: #a6a6a6; }
-  .rmap-node.is-active .rmap-node-dot { background: #0b7285; color: #fff; }
-  .rmap-node.is-active .rmap-node-label { color: #66d9e8; }
+  .rmap-node.is-active .rmap-node-dot { background: #8a6a2c; border-color: #c9a96e; color: #fff; }
+  .rmap-node.is-active .rmap-node-label { color: #c9a96e; }
 
 
   .rmap-post {
@@ -811,16 +883,12 @@ span.highlight {
     color: #a6a6a6;
   }
 
-  .rmap-stage[data-stage="1"].is-active { border-top-color: #ff922b; background: #201812; }
-  .rmap-stage[data-stage="2"].is-active { border-top-color: #69db7c; background: #142018; }
-  .rmap-stage[data-stage="3"].is-active { border-top-color: #3bc9db; background: #121f22; }
-  .rmap-stage[data-stage="4"].is-active { border-top-color: #74c0fc; background: #121c24; }
+  .rmap-stage.is-active { border-top-color: #c9a96e; background: #1e1e1e; }
+  .rmap-stage::after { background: #c9a96e; opacity: 0.14; }
+  .rmap-stage.is-active::after { opacity: 0.28; }
 
   .rmap-panel { border-left-color: #333; }   /* no-JS default */
-  #rmap-panel-1 { border-left-color: #ff922b; }
-  #rmap-panel-2 { border-left-color: #69db7c; }
-  #rmap-panel-3 { border-left-color: #3bc9db; }
-  #rmap-panel-4 { border-left-color: #74c0fc; }
+  #rmap-panel-1, #rmap-panel-2, #rmap-panel-3, #rmap-panel-4 { border-left-color: #c9a96e; }
 
   .rmap-loop {
     border-left-color: #444;
@@ -830,17 +898,23 @@ span.highlight {
   .rmap-loop::before { border-bottom-color: #444; }
 
   /* --- Essays --- */
-  .essay-body, .essay { background: #111; color: #e6e6e6; }
+  .essay-body { background: #111; color: #e6e6e6; }
+  .essay { color: #e6e6e6; }
+  .essay-body::before { background-image: url("images/ornaments/bamboo-dark.svg"); }
+  .essay-body::after { background-image: url("images/ornaments/bamboo-spray-dark.svg"); }
   .essay p { color: #e6e6e6; }
   .essay a { color: #8ab4f8; }
-  .essay a:hover, .essay a:focus { color: #f6b26b; }
-  .essay-section-title { border-left-color: #8ab4f8; }
+  .essay a:hover, .essay a:focus { color: #d9858b; }
+  .essay-section-title { border-left-color: #c9a96e; }
   .essay-assumption-label { color: #a6a6a6; }
 
   /* --- Working together --- */
   .working-together::before {
-    background: linear-gradient(90deg, rgba(138, 180, 248, 0.12) 0%, rgba(138, 180, 248, 0.025) 68%, transparent 100%);
-    border-left-color: #8ab4f8;
+    background: url("images/ornaments/olive-branch-dark.svg") right 4px top 0 / auto 188px no-repeat, #181818;
+    border-color: #333;
+  }
+  .working-together h2::before {
+    background: #c9a96e;
   }
 
   .essay-question { border-left-color: #444; }
